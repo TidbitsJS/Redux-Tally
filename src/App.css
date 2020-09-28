@@ -1,0 +1,89 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: 0 0 0 20%;
+}
+
+.App__header {
+  color: rgba(255, 255, 255, 0.91);
+  font-size: 1.8rem;
+}
+
+.App__subheader {
+  color: #b4c0d8;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.App__text--white {
+  color: #fff;
+}
+
+.Counter {
+  margin: 3.5rem 0 0 0;
+}
+
+.Counter--main {
+  background: #030303;
+  box-shadow: -12px 36px 54px 18px rgba(34, 39, 53, 0.43);
+  padding: 1.5rem 3.5rem 3rem;
+  margin: 1.5rem 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Counter--main__session {
+  margin-left: auto;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+.Counter--main__session > select {
+  background: transparent;
+  outline: 0;
+  border: 0;
+}
+
+.Counter--main__values {
+  display: flex;
+  justify-content: center;
+}
+
+.Counter--main__values > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Counter__separator {
+  color: #fff;
+  margin: 0 2rem;
+}
+
+.Counter__text--grey {
+  color: #858ca6;
+  font-size: 0.6rem;
+}
+
+.Counter__text--large {
+  font-size: 3rem;
+}
+
+.App__buttons {
+  text-align: center;
+}
+
+.App__buttons > button {
+  padding: 0.7rem 1rem;
+  margin: 0 1rem;
+  cursor: pointer;
+  background-color: cornflowerblue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}

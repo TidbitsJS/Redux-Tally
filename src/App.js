@@ -1,76 +1,77 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header>
-        <h4 className="App_subheader">Book Name</h4>
-        <h1 className="App_header">Understanding React-Redux</h1>
-      </header>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <h4 className="App__subheader">BOOK NAME</h4>
+          <h1 className="App__header">Understanding Redux - 1</h1>
+        </header>
 
-      <section className="Counter">
-        <h4 className="App_subheader">Total Time Spent on thr Project</h4>
+        <section className="Counter">
+          <h4 className="App__subheader">TOTAL TIME SPENT ON THE PROJECT</h4>
 
-        <main className="Counter--main">
-          <div className="Counter--main_session">
-            <span className="Counter_text--grey">Active Session:</span>
-            <select className="Counter_text--grey">
-              <option>Days</option>
-              <option>Hours</option>
-              <option>Minutes</option>
-              <option>Seconds</option>
-            </select>
-          </div>
-
-          <div className="Counter--main_values">
-            <div>
-              <span className="App_text--white Counter_text--large">{23}</span>
-              <span className="Counter_text--grey">Days</span>
+          <main className="Counter--main">
+            <div className="Counter--main__session">
+              <span className="Counter__text--grey">ACTIVE SESSION: </span>
+              <select className="Counter__text--grey">
+                <option>DAYS</option>
+                <option>HOURS</option>
+                <option>MINUTES</option>
+                <option>SECONDS</option>
+              </select>
             </div>
-          </div>
 
-          <div className="Counter_separator">:</div>
+            <div className="Counter--main__values">
+              <div>
+                <span className="App__text--white Counter__text--large">
+                  {23}
+                </span>
+                <span className="Counter__text--grey">DAYS</span>
+              </div>
 
-          <div className="Counter--main_values">
-            <div>
-              <span className="App_text--white Counter_text--large">{54}</span>
-              <span className="Counter_text--grey">Hours</span>
+              <div className="Counter__separator">:</div>
+
+              <div>
+                <span className="App__text--white Counter__text--large">
+                  {54}
+                </span>
+                <span className="Counter__text--grey">HOURS</span>
+              </div>
+
+              <div className="Counter__separator">:</div>
+
+              <div>
+                <span className="App__text--white Counter__text--large">
+                  {121}
+                </span>
+                <span className="Counter__text--grey">MINUTES</span>
+              </div>
+
+              <div className="Counter__separator">:</div>
+
+              <div>
+                <span className="App__text--white Counter__text--large">
+                  {25}
+                </span>
+                <span className="Counter__text--grey">SECONDS</span>
+              </div>
             </div>
+          </main>
+          <div className="App__buttons">
+            <button className="App__text--white" data-type="INCREASE_COUNTER">
+              INCREASE
+            </button>
+            <button className="App__text--white" data-type="DECREASE_COUNTER">
+              DECREASE
+            </button>
           </div>
-
-          <div className="Counter_separator">:</div>
-
-          <div className="Counter--main_values">
-            <div>
-              <span className="App_text--white Counter_text--large">{876}</span>
-              <span className="Counter_text--grey">Minutes</span>
-            </div>
-          </div>
-
-          <div className="Counter_separator">:</div>
-
-          <div className="Counter--main_values">
-            <div>
-              <span className="App_text--white Counter_text--large">
-                {1235}
-              </span>
-              <span className="Counter_text--grey">Seconds</span>
-            </div>
-          </div>
-        </main>
-
-        <div className="App_buttons">
-          <button className="App_text--white" data-type="INCREASE_COUNTER">
-            Increase
-          </button>
-          <button className="App_text--white" data-type="DECREASE_COUNTER">
-            Decrease
-          </button>
-        </div>
-      </section>
-    </div>
-  );
+        </section>
+      </div>
+    );
+  }
 }
 
 export default App;
