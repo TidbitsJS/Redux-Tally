@@ -10,15 +10,14 @@ import { connect } from "react-redux";
 class App extends Component {
   render() {
     const { days, hours, minutes, seconds, activeSession } = this.props.state;
-    const { setActiveSessionAC, updateCounter } = this.props.state;
 
     const setActiveSession = (e) => {
-      setActiveSessionAC(e.target.value);
+      this.props.setActiveSessionAC(e.target.value);
     };
 
     const handleCounter = (e) => {
       const type = e.target.dataset.type;
-      updateCounter(type, activeSession);
+      this.props.updateCounter(type, activeSession);
     };
 
     return (
