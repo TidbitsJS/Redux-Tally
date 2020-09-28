@@ -83,14 +83,14 @@ class App extends Component {
           </main>
           <div className="App__buttons">
             <button
-              className="App__text--white"
+              className="App__text--white inc"
               data-type="INCREASE_COUNTER"
               onClick={handleCounter}
             >
               INCREASE
             </button>
             <button
-              className="App__text--white"
+              className="App__text--white dec"
               data-type="DECREASE_COUNTER"
               onClick={handleCounter}
             >

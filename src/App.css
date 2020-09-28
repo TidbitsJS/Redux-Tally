@@ -81,9 +81,38 @@
 .App__buttons > button {
   padding: 0.7rem 1rem;
   margin: 0 1rem;
+  outline: none;
   cursor: pointer;
   background-color: cornflowerblue;
   color: #fff;
   border: none;
   border-radius: 5px;
+}
+
+.inc:hover {
+  transform: scale(0.9);
+}
+
+.dec:hover {
+  transform: scale(0.9);
+}
+
+@media (max-width: 670px) {
+  .App {
+    align-items: center;
+    zoom: 0.9;
+    padding: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .App {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 450px) {
+  .App {
+    zoom: 0.65;
+  }
 }
