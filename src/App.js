@@ -1,11 +1,25 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import {
+  setActiveSession as setActiveSessionAC,
+  updateCounter,
+} from "./actions/Action";
 import { connect } from "react-redux";
 
 class App extends Component {
   render() {
     const { days, hours, minutes, seconds, activeSession } = this.props.state;
+    const { setActiveSessionAC, updateCounter } = this.props.state;
+
+    const setActiveSession = (e) => {
+      setActiveSessionAC(e.target.value);
+    };
+
+    const handleCounter = (e) => {
+      const type = e.target.dataset.type;
+      updateCounter(type, activeSession);
+    };
 
     return (
       <div className="App">
@@ -20,7 +34,11 @@ class App extends Component {
           <main className="Counter--main">
             <div className="Counter--main__session">
               <span className="Counter__text--grey">ACTIVE SESSION: </span>
-              <select className="Counter__text--grey" value={activeSession}>
+              <select
+                className="Counter__text--grey"
+                onChange={setActiveSession}
+                value={activeSession}
+              >
                 <option>DAYS</option>
                 <option>HOURS</option>
                 <option>MINUTES</option>
@@ -65,10 +83,18 @@ class App extends Component {
             </div>
           </main>
           <div className="App__buttons">
-            <button className="App__text--white" data-type="INCREASE_COUNTER">
+            <button
+              className="App__text--white"
+              data-type="INCREASE_COUNTER"
+              onClick={handleCounter}
+            >
               INCREASE
             </button>
-            <button className="App__text--white" data-type="DECREASE_COUNTER">
+            <button
+              className="App__text--white"
+              data-type="DECREASE_COUNTER"
+              onClick={handleCounter}
+            >
               DECREASE
             </button>
           </div>
@@ -84,4 +110,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { setActiveSessionAC, updateCounter })(
+  App
+);
