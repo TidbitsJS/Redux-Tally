@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import { connect } from "react-redux";
+
 class App extends Component {
   render() {
+    const { days, hours, minutes, seconds, activeSession } = this.props.state;
+
     return (
       <div className="App">
         <header>
@@ -16,7 +20,7 @@ class App extends Component {
           <main className="Counter--main">
             <div className="Counter--main__session">
               <span className="Counter__text--grey">ACTIVE SESSION: </span>
-              <select className="Counter__text--grey">
+              <select className="Counter__text--grey" value={activeSession}>
                 <option>DAYS</option>
                 <option>HOURS</option>
                 <option>MINUTES</option>
@@ -27,7 +31,7 @@ class App extends Component {
             <div className="Counter--main__values">
               <div>
                 <span className="App__text--white Counter__text--large">
-                  {23}
+                  {days}
                 </span>
                 <span className="Counter__text--grey">DAYS</span>
               </div>
@@ -36,7 +40,7 @@ class App extends Component {
 
               <div>
                 <span className="App__text--white Counter__text--large">
-                  {54}
+                  {hours}
                 </span>
                 <span className="Counter__text--grey">HOURS</span>
               </div>
@@ -45,7 +49,7 @@ class App extends Component {
 
               <div>
                 <span className="App__text--white Counter__text--large">
-                  {121}
+                  {minutes}
                 </span>
                 <span className="Counter__text--grey">MINUTES</span>
               </div>
@@ -54,7 +58,7 @@ class App extends Component {
 
               <div>
                 <span className="App__text--white Counter__text--large">
-                  {25}
+                  {seconds}
                 </span>
                 <span className="Counter__text--grey">SECONDS</span>
               </div>
@@ -74,4 +78,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    state,
+  };
+};
+
+export default connect(mapStateToProps)(App);
